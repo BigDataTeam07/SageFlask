@@ -12,7 +12,7 @@ from utils import convert_sentence_to_features, create_example, load_emotions, V
 app = Flask(__name__)
 runtime = boto3.client("sagemaker-runtime", region_name="ap-southeast-1")
 
-# 预加载 tokenizer 和 labels
+# preload tokenizer and labels
 tokenizer = tokenization.FullTokenizer(vocab_file=VOCAB_FILE, do_lower_case=False)
 emotions = load_emotions(EMOTION_FILE)
 num_labels = len(emotions)
